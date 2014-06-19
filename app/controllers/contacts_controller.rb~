@@ -38,13 +38,13 @@ class ContactsController < ApplicationController
   	redirect_to contacts_path
   end
 
-  def fu
+  def fullname
     name=params[:contact][:photo].original_filename
     directory= "public/data"
      return path = File.join(directory,name)
   end
   def contact_params
-    File.open(fu, "wb") { |f| f.write(params[:contact][:photo].read) }
+    File.open(fullname, "wb") { |f| f.write(params[:contact][:photo].read) }
     params.require(:contact).permit(:firstname, :lastname, :email, :mobilenumber, :address)
   end
 end
