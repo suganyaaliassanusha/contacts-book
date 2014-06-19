@@ -1,0 +1,8 @@
+<h1>CONTACTS BOOK</h1>
+<marquee>This is an online contact book that lets you  add, view, edit and destroy contacts. As this is an online contacts book you can manage your contacts easier than ever. Enjoy the power of ONLINE CONTACTS BOOK </marquee> 
+<h1> New contact </h1>
+
+<%= render 'form' %>
+<%= link_to 'list of contacts', contacts_path %>
+
+<img src="kk.gif" />
