@@ -6,9 +6,11 @@ class ContactsController < ApplicationController
   end
   def create
      @contact = Contact.new(contact_params)
+     puts params[:contact][:photo]
       name=params[:contact][:photo].original_filename
+       @contact.photo = name
        if @contact.save
-          @contact.update(:photo => name)
+         @contact.update(:photo => name)
          redirect_to @contact
        else
           render 'new'
@@ -45,6 +47,6 @@ class ContactsController < ApplicationController
   end
   def contact_params
     File.open(fullname, "wb") { |f| f.write(params[:contact][:photo].read) }
-    params.require(:contact).permit(:firstname, :lastname, :email, :mobilenumber, :address)
+    params.require(:contact).permit(:firstname, :lastname, :email, :mobilenumber, :address, :photo)
   end
 end
