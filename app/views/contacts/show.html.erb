@@ -1,3 +1,4 @@
+<img src="/data/<%= @contact.photo %>" width= "200" height="200" float="left" border="2px solid black" />
 <p>
 <strong>FirstName: </strong>
 <%= @contact.firstname %>
@@ -6,6 +7,11 @@
 <strong>Lastname:</strong>
 <%= @contact.lastname %>
 </p>
+<p>
+<strong>Gender:</strong>
+<%= @contact.gender %>
+</p>
+
 <p>
 <strong>Email:</strong>
 <%= @contact.email %>
@@ -19,8 +25,7 @@
 <%= @contact.address %>
 </p>
 <P>
-<strong>Image: </strong>
-<img src="/data/<%= @contact.photo %>" width= "200" height="200" />
+<strong>Image: </strong><br>
 </p>
 
 <%= link_to "list of contacts", contacts_path %>

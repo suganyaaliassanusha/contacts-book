@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <title>Contact</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-<style>
-body{
-background-color: "pink" 
-}
-</style>
+  
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
+ <div class="header">
+  <p class="disp2"><img src="/data/h4.png" height="50" width="50" />Contacts Book</p>
+  <p class="disp1" align="right">
+  <%= link_to_unless_current 'Home', new_contact_path, {:style => 'color: #FFFFFF'} %>
+  <%= link_to_unless_current 'All', contacts_path, {:style => 'color: #FFFFFF'} %> 
+  <%= link_to_unless_current 'Male', contacts_male_path, {:style => 'color: #FFFFFF'} %>  
+  <%= link_to 'Female', contacts_female_path, {:style => 'color: #FFFFFF'} %> 
+  </p>
+ </div>
 
 </head>
 <body>
-
-<%= yield %>
-
+ <%= yield %>
+ <div class="footer">
+  <p class="foot">All text and design<img src="/data/copy.png" width="20" height="20" z-index="5" /> 2014 Report Bee Edusys Pvt. Ltd.</p>
+ </div>
 </body>
 </html>

@@ -14,3 +14,32 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+function validate()
+	{
+    var fname= document.getElementById("contact_firstname").value;
+    var lname=document.getElementById("contact_lastname").value;
+    var email=document.getElementById("contact_email").value;
+    var gen=document.getElementById("contact_gender").value;
+	if(fname == "")
+	{
+		alert("firstname cannot be empty");
+		return false;
+	}
+	if(lname == "")
+	{
+		alert("lastname cannot be empty");
+		return false;
+	}
+	if(email == "")
+	{
+		alert("email cannot be empty");
+		return false;
+	}
+	if(gen == "")
+	{
+		alert("please mention your gender");
+		return false;
+	}
+	
+
+	}

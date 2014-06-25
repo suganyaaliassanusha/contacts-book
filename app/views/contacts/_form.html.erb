@@ -1,34 +1,56 @@
-<%= form_for :contact, url: contacts_path do |f| %>
+<%= form_for @contact  do |f| %>
+<% if @contact.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this post from being saved:</h2>
+ 
+    <ul>
+    <% @contact.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <p>
 <%= f.label :firstname %>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <%= f.text_field :firstname %>
+
 </p>
+
 <p>
 <%= f.label :lastname %>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <%= f.text_field :lastname %>
 </p>
+
+<p>
+<%= f.label :gender %>
+<%= f.select :gender, options_for_select([[""],["Male"],["Female"]]), :html => { :class => 'button' } %>
+</p>
+
 <p>
 <%= f.label :email %>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <%= f.text_field :email %>
 </p>
+
 <p>
 <%= f.label :mobilenumber %>
-&nbsp
 <%= f.text_field :mobilenumber %>
 </p>
+
 <p>
 <%= f.label :address %>
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <%= f.text_area :address %>
 </p>
+
 <p>
 <%= f.label :photo %>
 <%= f.file_field :photo %>
 </p>
+
 <p>
-<%= f.submit %>
+<%= f.submit :html => { :class => 'button' }, :onclick => "return validate();" %>
 </p>
+
 <% end %>
+
+

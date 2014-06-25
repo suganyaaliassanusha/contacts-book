@@ -1,14 +1,22 @@
-<h1>CONTACTS BOOK</h1>
-<marquee>This is an online contact book that lets you  add, view, edit and destroy contacts. As this is an online contacts book you can manage your contacts easier than ever. Enjoy the power of ONLINE CONTACTS BOOK </marquee> 
-<h1> New contact </h1>
+ <h2>NEW CONTACT</h2>
+<% content_for :titles do %>
+ <h1> New contact </h1>
+ <% end %>
+
+
+<div  style= "float:right; padding-left:5px; height:800; width:300;" >
+<marquee behavior= "slide" direction="down" scrollamount="30"> <%= link_to image_tag("/data/n1.png", width:200, height:90), :action => 'new', :controller => 'contacts' %><br><br><%= link_to image_tag("/data/n2.png", width: 200, height:90), :action => 'index', :controller => 'contacts' %>   </marquee>
+</div>
+<div>
 
 <%= render 'form' %>
 
-<hr>
-<br>
-<h1>FOR EXISTING CONTACTS&nbsp&nbsp&nbsp<%= link_to 'SEARCH HERE', contacts_path %></h1>
 
-<img src="kk.gif" width="250" height="250" />
+
+
+
+
+
 
 
 

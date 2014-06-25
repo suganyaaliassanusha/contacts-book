@@ -1,29 +1,27 @@
-<h1>List of contacts</h1>
 
-<table>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-<th>Email</th>
-<th>MobileNumber</th>
-<th>Address</th>
-<th>Contact picture</th>
-</tr>
+
+<div class="main"> 
+<p><u>All contacts</u></p>
 
 <% @contacts.each do |contact| %>
-<tr>
-<td><%= contact.firstname %></td>
-<td><%= contact.lastname %></td>
-<td><%= contact.email %></td>
-<td><%= contact.mobilenumber %></td>
-<td><%= contact.address %></td>
-<td><img src= "/data/<%= contact.photo %>" width= "100" height="100" /></td>
-<td><%= link_to 'view', contact_path(contact) %></td>
-<td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-<td><%= link_to 'delete', contact_path(contact), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
-</tr>
+<img src="/data/<%= contact.photo %>" width= "100" height="100"  style="float: left; margin-left:0px;" />
+<div class="all">
+<p class="disp"><u><%= contact.firstname %>&nbsp<%= contact.lastname %></u></p>
+Gender &nbsp&nbsp<%= contact.gender %> 
+<br>
+Email&nbsp&nbsp&nbsp<%= contact.email %>
+<br>
+Phone&nbsp&nbsp<%= contact.mobilenumber %>
+<br>
+Address&nbsp&nbsp<%= contact.address %>
+<br>
+<!-- <%= link_to 'Destroy', contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' } %> -->
+
+
+
+</div>
+<hr>
+
 <% end %>
-</table>
-<br>
-<br>
-<%= link_to 'Add new contact', new_contact_path %>
+</div>
+

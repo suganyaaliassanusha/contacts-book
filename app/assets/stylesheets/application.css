@@ -1,20 +1,74 @@
 body {
- background-image:url("mm.jpg");
+ background-color: #BDBDBD;
  background-size: cover;
+ font-family: Helvetica;
+ font-size: 18px;
+ color: #007065;
+ margin: 0px;
+ height: 100%;
 }
+div.header{
+ background-color:#007065;
+ margin: 0;
+ margin-top: 0px;
+ height: 80px;
+ color: white;
+ font-family: Helvetica;
+ font-size: 20px;
+}
+header img{
+	margin-left: 200px;
+	margin-top: 30px;
+}
+div.footer{
+    height: 35px;
+    width: 100%;
+    background-color:#007065;
+    color: #BDBDBD;
+    text-align: center;
+    bottom: 0px;
 
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+}
+div.main{
+ width:800px;
+ margin-left:200px;
+}
+label{
+	   width: 10em;
+	   float: left;
+      text-align:center;
+     margin-right: 5em;
+}
+table{
+	
+	border-collapse: collapse;
+	border: 1px solid #21610B;
+}
+ table td{
+ 	border-collapse: collapse;
+	border: 1px solid #21610B;
+	border-image: url("/data/border1.jpg");
+ }
+.button{
+ font-family: "Open Sans", sans-serif;
+ font-style: italic;
+}
+div.all{
+	margin-left: 150px;
+	line-height: 150%;
+}
+p.foot{
+	padding-top: 10px;
+	margin: 0px;
+}
+p.disp1{
+	margin: 0px;
+	color: white;
+}
+p.disp2{
+	margin:0px;
+	margin-left: 100px;
+}
+p.disp{
+	margin:0px;
+}
