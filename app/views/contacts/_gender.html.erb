@@ -1,0 +1,44 @@
+
+
+<div class="main"> 
+
+
+<% @contacts.each do |contact| %>
+<div class="list-contacts">
+ 
+<a href="<%= contact_path(contact) %>" ><img class="show-img" src="/data/<%= contact.photo %>" /> </a> 
+<div class="all">
+  <p class="list-p"><a href="<%= contact_path(contact) %>"><%= contact.firstname %>&nbsp<%= contact.lastname %></a></p>
+          <div class="label">
+           Gender
+          </div>
+          <div>
+           <%= contact.gender %>
+          </div>
+          <div class="label">
+           Email
+          </div>
+          <div>
+           <%= contact.email %>
+          </div>
+          <div class="label">
+            Phone
+          </div>
+          <div>
+            <%= contact.mobilenumber %>
+          </div>
+          <div class="label">
+            Address
+          </div>
+          <div>
+            <%= contact.address %>
+          </div>
+<!-- <%= link_to 'Destroy', contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' } %> -->
+<!-- <%= link_to 'view', contact_path(contact) %> -->
+
+
+</div>
+</div>
+<% end %>
+</div>
+

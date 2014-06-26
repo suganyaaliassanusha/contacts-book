@@ -10,47 +10,61 @@
     </ul>
   </div>
 <% end %>
-
-<p>
+<div class="main">
+<div class="label">
 <%= f.label :firstname %>
+</div>
+<div>
 <%= f.text_field :firstname %>
+</div>
 
-</p>
-
-<p>
+<div class="label">
 <%= f.label :lastname %>
+</div>
+<div>
 <%= f.text_field :lastname %>
-</p>
+</div>
 
-<p>
+<div class="label">
 <%= f.label :gender %>
+</div>
+<div>
 <%= f.select :gender, options_for_select([[""],["Male"],["Female"]]), :html => { :class => 'button' } %>
-</p>
+</div>
 
-<p>
+<div class="label">
 <%= f.label :email %>
+</div>
+<div>
 <%= f.text_field :email %>
-</p>
+</div>
 
-<p>
+
+<div class="label">
 <%= f.label :mobilenumber %>
+</div>
+<div>
 <%= f.text_field :mobilenumber %>
-</p>
+</div>
 
-<p>
+<div class="label">
 <%= f.label :address %>
+</div>
+<div>
 <%= f.text_area :address %>
-</p>
+</div>
 
-<p>
+<div class="label">
 <%= f.label :photo %>
+</div>
+<div>
 <%= f.file_field :photo %>
-</p>
+</div>
 
 <p>
 <%= f.submit :html => { :class => 'button' }, :onclick => "return validate();" %>
 </p>
 
 <% end %>
-
+</div>
 

@@ -1,27 +1,6 @@
 
 
-<div class="main"> 
-<p><u>All contacts</u></p>
+<h4>All contacts</h4>
 
-<% @contacts.each do |contact| %>
-<img src="/data/<%= contact.photo %>" width= "100" height="100"  style="float: left; margin-left:0px;" />
-<div class="all">
-<p class="disp"><u><%= contact.firstname %>&nbsp<%= contact.lastname %></u></p>
-Gender &nbsp&nbsp<%= contact.gender %> 
-<br>
-Email&nbsp&nbsp&nbsp<%= contact.email %>
-<br>
-Phone&nbsp&nbsp<%= contact.mobilenumber %>
-<br>
-Address&nbsp&nbsp<%= contact.address %>
-<br>
-<!-- <%= link_to 'Destroy', contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' } %> -->
-
-
-
-</div>
-<hr>
-
-<% end %>
-</div>
+<%= render 'gender' %>
 

@@ -1,32 +1,36 @@
-<img src="/data/<%= @contact.photo %>" width= "200" height="200" float="left" border="2px solid black" />
-<p>
-<strong>FirstName: </strong>
-<%= @contact.firstname %>
-</p>
-<p>
-<strong>Lastname:</strong>
-<%= @contact.lastname %>
-</p>
-<p>
-<strong>Gender:</strong>
-<%= @contact.gender %>
-</p>
+<div class="main">
+  <div class="list-contacts">
+  
+    <img class="show-img" src="/data/<%= @contact.photo %>" /> 
 
-<p>
-<strong>Email:</strong>
-<%= @contact.email %>
-</p>
-<p>
-<strong>MobileNumber:</strong>
-<%= @contact.mobilenumber %>
-</p>
-<p>
-<strong>Address:</strong>
-<%= @contact.address %>
-</p>
-<P>
-<strong>Image: </strong><br>
-</p>
-
-<%= link_to "list of contacts", contacts_path %>
+    <div class="all">
+          <p class="underline"><%= @contact.firstname %>&nbsp<%= @contact.lastname %></p>
+          <div class="label">
+          Gender
+          </div>
+          <div>
+          <%= @contact.gender %>
+          </div>
+          <div class="label">
+           Email
+          </div>
+          <div>
+          <%= @contact.email %>
+          </div>
+          <div class="label">
+           Phone
+           </div>
+           <div>
+           <%= @contact.mobilenumber %>
+           </div>
+           <div class="label">
+           Address
+           </div>
+           <div>
+           <%= @contact.address %>
+           </div>
+    </div>
+  </div>
+   
+ </div>
 

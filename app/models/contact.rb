@@ -5,5 +5,6 @@ class Contact < ActiveRecord::Base
 	validates :mobilenumber, presence: true, uniqueness: true, numericality: {only_integer: true}
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 	validates :address, presence: true
+	scope :male, where(:gender => "Male")
 end
 

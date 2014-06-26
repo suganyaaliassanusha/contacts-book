@@ -1,11 +1,11 @@
 class ContactsController < ApplicationController
 
   def index
-  	@contacts=Contact.all
+  	@contacts = Contact.all
   end
 
   def new
-  	@contact=Contact.new
+  	@contact = Contact.new
   end
 
   def create
@@ -27,13 +27,14 @@ class ContactsController < ApplicationController
   def edit
     @contact= Contact.find(params[:id])
   end
+
   def male
-    @contacts = Contact.where(gender:  "Male")
-    render 'index'
+    @contacts = Contact.where(gender: "Male")
+    render 'male'
   end
   def female
     @contacts = Contact.where(gender:  "Female")
-   render 'index'
+   render 'female'
     end
   def update
   	@contact=Contact.find(params[:id])
@@ -63,4 +64,5 @@ class ContactsController < ApplicationController
     File.open(fullname, "wb") { |f| f.write(params[:contact][:photo].read) }
     params.require(:contact).permit(:firstname, :lastname, :email, :mobilenumber, :address, :gender)
   end
+
 end

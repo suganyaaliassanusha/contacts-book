@@ -1,13 +1,9 @@
- <h2>NEW CONTACT</h2>
-<% content_for :titles do %>
- <h1> New contact </h1>
- <% end %>
+<h2>NEW CONTACT</h2>
 
-
-<div  style= "float:right; padding-left:5px; height:800; width:300;" >
-<marquee behavior= "slide" direction="down" scrollamount="30"> <%= link_to image_tag("/data/n1.png", width:200, height:90), :action => 'new', :controller => 'contacts' %><br><br><%= link_to image_tag("/data/n2.png", width: 200, height:90), :action => 'index', :controller => 'contacts' %>   </marquee>
+<div class="side-panel">
+ <%= link_to image_tag("/data/n1.png", width:200, height:90), :action => 'new', :controller => 'contacts' %>
+ <%= link_to image_tag("/data/n2.png", width: 200, height:90), :action => 'index', :controller => 'contacts' %> 
 </div>
-<div>
 
 <%= render 'form' %>
 
