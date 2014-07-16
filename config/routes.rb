@@ -1,4 +1,8 @@
 ContactsBook::Application.routes.draw do
+  get "sign_up" => "users#new", :as => "sign_up"
+
+  resources :users
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'contacts/male'

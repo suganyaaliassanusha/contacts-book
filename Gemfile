@@ -40,8 +40,10 @@ gem 'mail', '2.5.4'
 
 gem 'actionmailer'
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
