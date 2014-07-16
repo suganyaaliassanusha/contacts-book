@@ -1,6 +1,23 @@
+<div id="search">
+  <form>
+    <!--  text_field_tag(:firstname :onkeyup => "ajaxfunction()") %> -->
+     <input type="text" onkeyup="ajaxfunction(this.value)" id="search-name"> 
+    <!--  search_field(:contacts, :id)  -->
+     <button id="search-button">Search</button> 
+   </form>
+</div>
+
+<div id="search-display">
+
+<p id="search-display-p"></p>
+</div>
 
 
-<h4>All contacts</h4>
+
+<h4 class="index-h4">All contacts</h4>
 
 <%= render 'gender' %>
 
+
+
+  

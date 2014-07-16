@@ -43,3 +43,65 @@ function validate()
 	
 
 	}
+
+
+	function ajaxfunction(firstname){
+		var xmlhttp;
+		var key;
+       
+
+		
+
+		try{
+			xmlhttp = new XMLHttpRequest();
+		}
+		catch(e){
+			try{
+               xmlhttp = new ActiveXObject(MSxml2.XMLHttpRequest);
+           }
+           catch(e){
+           	alert("sorry! browser support failed");
+           }
+		}
+		xmlhttp.onreadystatechange = function()
+		{
+			if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+			{
+
+				var key = JSON.parse(xmlhttp.responseText);
+				document.getElementById("search-display").innerHTML = "";
+			}
+
+			if(key.length == 0){
+				document.getElementById("search-display").innerHTML = "No results found";
+			}
+			if(firstname.length == 0){
+			    document.getElementById("search-display").innerHTML = "";
+			    return;
+		    }
+			for( var i=0; i < key.length; i++){
+			    var display =  key[i].firstname  + "&nbsp&nbsp" + key[i].mobilenumber + "\n" ;
+			   
+				document.getElementById("search-display").innerHTML += display;
+
+                 
+			}
+
+	            $(document).ready(function(){
+					// alert("hello");
+				    //$("#search-display").slideDown('slow');
+				    $("#search-button").click(function(){
+				    	$("#index-div").hide();
+				    	
+
+				    });
+				 });
+		}
+
+		
+		
+		xmlhttp.open("GET", "contacts?firstname="+firstname, true);
+		xmlhttp.send();
+
+
+	}

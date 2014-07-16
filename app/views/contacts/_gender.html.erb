@@ -1,10 +1,9 @@
 
 
-<div class="main"> 
-
+<div class="main" id="index-div"> 
 
 <% @contacts.each do |contact| %>
-<div class="list-contacts">
+<div class="list-contacts" id= "<%= contact.firstname %>">
  
 <a href="<%= contact_path(contact) %>" ><img class="show-img" src="/data/<%= contact.photo %>" /> </a> 
 <div class="all">

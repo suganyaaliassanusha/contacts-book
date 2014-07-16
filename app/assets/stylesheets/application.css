@@ -35,16 +35,22 @@ div.footer {
     color: #BDBDBD;
     text-align: center;
     bottom: 0px;
+    clear:both;
 }
 h4 {
     text-decoration: underline;
     padding-left: 200px;
+    display: inline-block;
+    float: left;
 }
 h3{
 	text-decoration: underline;
 }
 h2 {
     text-align: center;
+}
+h4.index-h4{
+    padding-top: 20px;
 }
 p.underline {
     text-decoration: underline;
@@ -59,6 +65,8 @@ div.list-contacts {
     border-bottom: 1px solid black;
     padding-top: 20px;
     padding-bottom: 20px;
+    clear: both;
+    
 }
 div.label {
     width: 100px;
@@ -88,7 +96,8 @@ div.disp1 ul {
     list-style-type: none;
 }
 div.disp1 ul li {
-    display: inline;
+    display: inline-block;
+    padding-right: 20px;
 }
 div.disp1 ul li a {
     color: #ffffff;
@@ -123,4 +132,28 @@ p.list-p{
 }
 p.list-p a{
 	color: #007065;
+}
+div#search{
+    width:300px;
+    float:right;
+    height:40px;
+    padding-top:30px;
+}
+div#search-display{
+    clear: both;
+    width:300px;
+    height: 50px;
+    float: right;
+
+}
+p.link-p a{
+    text-decoration: none;
+    color: #007065;
+    padding: 20px;
+}
+p.link-p{
+    display: inline-block;
+    border: 1px solid #DCDCDC;
+    border-style: groove;
+    background-color: white;
 }

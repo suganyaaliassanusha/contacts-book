@@ -10,9 +10,12 @@ class ContactsController < ApplicationController
 
   def create
      @contact = Contact.new(contact_params)
+     
       name=params[:contact][:photo].original_filename
        @contact.photo = name
+       
        if @contact.save
+         
          @contact.update(:photo => name)
          redirect_to @contact
        else
@@ -22,20 +25,32 @@ class ContactsController < ApplicationController
 
   def show
   	@contact = Contact.find(params[:id])
+    CustomerSupport.customer_support(@contact).deliver
   end
 
   def edit
     @contact= Contact.find(params[:id])
   end
 
+  def search
+    @contacts = Contact.where("firstname LIKE ? or lastname LIKE ?", "#{params[:firstname]}%", "#{params[:firstname]}%")
+    render json: @contacts.as_json 
+  end
+
+  def searchresults
+    @contacts = Contact.where(firstname: "#{params[:firstname]}" )
+  end
+
   def male
     @contacts = Contact.where(gender: "Male")
     render 'male'
   end
+
   def female
     @contacts = Contact.where(gender:  "Female")
    render 'female'
-    end
+  end
+
   def update
   	@contact=Contact.find(params[:id])
         name=params[:contact][:photo].original_filename

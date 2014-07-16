@@ -32,6 +32,14 @@ gem 'byebug'
 
 gem 'mysql2'
 
+gem 'activeadmin', github: 'gregbell/active_admin'
+
+gem 'devise'
+
+gem 'mail', '2.5.4'
+
+gem 'actionmailer'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,6 +1,10 @@
 ContactsBook::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'contacts/male'
   get 'contacts/female'
+  get 'contacts/search'
+  post 'contacts/searchresults'
   resources :contacts
   root :to => 'contacts#new'
 
